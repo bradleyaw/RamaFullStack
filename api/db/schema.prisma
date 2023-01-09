@@ -1,0 +1,40 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+model Player {
+  id          Int     @id @default(autoincrement())
+  first_name  String
+  last_name   String
+  deleted     Int
+  createdAt   DateTime  @default(now())
+}
+
+model Result {
+  id          Int     @id @default(autoincrement())
+  season      String     @default("2023 Spring")
+  week_number Int
+  playerid    Int
+  game_one    Int
+  game_two    Int
+  game_three  Int
+  bye         Int
+  deleted     Int
+  createdAt   DateTime  @default(now())
+}
+
+model User {
+  id                  Int       @id @default(autoincrement())
+  name                String?
+  email               String    @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+}
