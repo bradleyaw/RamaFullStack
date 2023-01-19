@@ -28,3 +28,9 @@ export const deleteResult = ({ id }) => {
     where: { id },
   })
 }
+
+export const Result = {
+  player: (_obj, { root }) => {
+    return db.result.findUnique({ where: { id: root?.id } }).player()
+  },
+}

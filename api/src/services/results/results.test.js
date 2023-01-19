@@ -19,36 +19,36 @@ describe('results', () => {
     expect(result).toEqual(scenario.result.one)
   })
 
-  scenario('creates a result', async () => {
+  scenario('creates a result', async (scenario) => {
     const result = await createResult({
       input: {
-        week_number: 2850433,
-        playerid: 3239160,
-        game_one: 4935815,
-        game_two: 3348891,
-        game_three: 9496005,
-        bye: 5677849,
-        deleted: 8250639,
+        week_number: 1171789,
+        game_one: 5202707,
+        game_two: 9166407,
+        game_three: 6422677,
+        bye: 434782,
+        deleted: 3857379,
+        playerId: scenario.result.two.playerId,
       },
     })
 
-    expect(result.week_number).toEqual(2850433)
-    expect(result.playerid).toEqual(3239160)
-    expect(result.game_one).toEqual(4935815)
-    expect(result.game_two).toEqual(3348891)
-    expect(result.game_three).toEqual(9496005)
-    expect(result.bye).toEqual(5677849)
-    expect(result.deleted).toEqual(8250639)
+    expect(result.week_number).toEqual(1171789)
+    expect(result.game_one).toEqual(5202707)
+    expect(result.game_two).toEqual(9166407)
+    expect(result.game_three).toEqual(6422677)
+    expect(result.bye).toEqual(434782)
+    expect(result.deleted).toEqual(3857379)
+    expect(result.playerId).toEqual(scenario.result.two.playerId)
   })
 
   scenario('updates a result', async (scenario) => {
     const original = await result({ id: scenario.result.one.id })
     const result = await updateResult({
       id: original.id,
-      input: { week_number: 9684301 },
+      input: { week_number: 374953 },
     })
 
-    expect(result.week_number).toEqual(9684301)
+    expect(result.week_number).toEqual(374953)
   })
 
   scenario('deletes a result', async (scenario) => {

@@ -6,13 +6,13 @@ export const QUERY = gql`
       id
       season
       week_number
-      playerid
       game_one
       game_two
       game_three
       bye
       deleted
       createdAt
+      playerId
     }
   }
 `

@@ -52,10 +52,6 @@ const Result = ({ result }) => {
               <td>{result.week_number}</td>
             </tr>
             <tr>
-              <th>Playerid</th>
-              <td>{result.playerid}</td>
-            </tr>
-            <tr>
               <th>Game one</th>
               <td>{result.game_one}</td>
             </tr>
@@ -78,6 +74,10 @@ const Result = ({ result }) => {
             <tr>
               <th>Created at</th>
               <td>{timeTag(result.createdAt)}</td>
+            </tr>
+            <tr>
+              <th>Player id</th>
+              <td>{result.playerId}</td>
             </tr>
           </tbody>
         </table>

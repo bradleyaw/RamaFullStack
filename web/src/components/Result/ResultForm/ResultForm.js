@@ -60,24 +60,6 @@ const ResultForm = (props) => {
         <FieldError name="week_number" className="rw-field-error" />
 
         <Label
-          name="playerid"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Playerid
-        </Label>
-
-        <NumberField
-          name="playerid"
-          defaultValue={props.result?.playerid}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="playerid" className="rw-field-error" />
-
-        <Label
           name="game_one"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
@@ -166,6 +148,24 @@ const ResultForm = (props) => {
         />
 
         <FieldError name="deleted" className="rw-field-error" />
+
+        <Label
+          name="playerId"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Player id
+        </Label>
+
+        <NumberField
+          name="playerId"
+          defaultValue={props.result?.playerId}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+
+        <FieldError name="playerId" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

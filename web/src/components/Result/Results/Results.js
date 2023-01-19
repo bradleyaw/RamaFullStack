@@ -42,13 +42,13 @@ const ResultsList = ({ results }) => {
             <th>Id</th>
             <th>Season</th>
             <th>Week number</th>
-            <th>Playerid</th>
             <th>Game one</th>
             <th>Game two</th>
             <th>Game three</th>
             <th>Bye</th>
             <th>Deleted</th>
             <th>Created at</th>
+            <th>Player id</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -58,13 +58,13 @@ const ResultsList = ({ results }) => {
               <td>{truncate(result.id)}</td>
               <td>{truncate(result.season)}</td>
               <td>{truncate(result.week_number)}</td>
-              <td>{truncate(result.playerid)}</td>
               <td>{truncate(result.game_one)}</td>
               <td>{truncate(result.game_two)}</td>
               <td>{truncate(result.game_three)}</td>
               <td>{truncate(result.bye)}</td>
               <td>{truncate(result.deleted)}</td>
               <td>{timeTag(result.createdAt)}</td>
+              <td>{truncate(result.playerId)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

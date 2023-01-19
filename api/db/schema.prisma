@@ -9,24 +9,26 @@ generator client {
 }
 
 model Player {
-  id          Int     @id @default(autoincrement())
-  first_name  String
-  last_name   String
-  deleted     Int
-  createdAt   DateTime  @default(now())
+  id         Int      @id @default(autoincrement())
+  first_name String
+  last_name  String
+  deleted    Int
+  createdAt  DateTime @default(now())
+  Result     Result[]
 }
 
 model Result {
-  id          Int     @id @default(autoincrement())
-  season      String     @default("2023 Spring")
+  id          Int      @id @default(autoincrement())
+  season      String   @default("2023 Spring")
   week_number Int
-  playerid    Int
+  player      Player   @relation(fields: [playerId], references: [id])
   game_one    Int
   game_two    Int
   game_three  Int
   bye         Int
   deleted     Int
-  createdAt   DateTime  @default(now())
+  createdAt   DateTime @default(now())
+  playerId    Int
 }
 
 model User {

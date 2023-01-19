@@ -3,40 +3,41 @@ export const schema = gql`
     id: Int!
     season: String!
     week_number: Int!
-    playerid: Int!
+    player: Player!
     game_one: Int!
     game_two: Int!
     game_three: Int!
     bye: Int!
     deleted: Int!
     createdAt: DateTime!
+    playerId: Int!
   }
 
   type Query {
-    results: [Result!]! @skipAuth
+    results: [Result!]! @requireAuth
     result(id: Int!): Result @requireAuth
   }
 
   input CreateResultInput {
     season: String!
     week_number: Int!
-    playerid: Int!
     game_one: Int!
     game_two: Int!
     game_three: Int!
     bye: Int!
     deleted: Int!
+    playerId: Int!
   }
 
   input UpdateResultInput {
     season: String
     week_number: Int
-    playerid: Int
     game_one: Int
     game_two: Int
     game_three: Int
     bye: Int
     deleted: Int
+    playerId: Int
   }
 
   type Mutation {
